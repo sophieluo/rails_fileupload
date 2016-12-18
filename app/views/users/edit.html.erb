@@ -1,0 +1,6 @@
+<%= form_for @user, html: { multipart: true } do |form| %>
+  <span>Name: </span>
+  <%= form.text_field :name %><br>
+  <%= form.file_field :avatar %>
+  <%= form.submit %>
+<% end %>

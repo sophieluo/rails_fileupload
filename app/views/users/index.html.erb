@@ -1,0 +1,18 @@
+
+<h1> index for users controller</h1>
+
+  <% @users.each do |user| %>
+    <p>Name: <%= user.name %></p>
+    <%= image_tag user.avatar.url(:medium) %>
+    <%= image_tag user.avatar.url(:thumb) %>
+
+    <%= link_to "Show this user", user %>
+    <br>
+    <%= link_to "Edit this user", edit_user_path(user) %>
+    <br>
+    <%= link_to "Delete this user", user, method: :delete, data: {confirm: 'Are you sure you want to delete me?'} %>
+  <% end %>
+
+  <br>
+
+  <%= link_to "Create a new user", new_user_path %>
